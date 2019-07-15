@@ -1,0 +1,30 @@
+<div *ngIf="storeDetails">
+  <div class="banner">
+      <img src="{{storeDetails.img}}"/>  
+  </div>  
+  <div class="container">
+    <h1>About Us</h1>
+    <div class="row">
+      <div class="col-sm-7"><p>
+          Welcome to the world of healthy and delicious fast food. Since opening in 1990 our philosophy remains the same, to provide great food, exceptional value and friendly service to every customer we serve. We look forward to share our passion for food with you and your family. Our restaurant tries to use only organic, local ingredients, with meats from naturally raised animals. The intention is very clear - to offer a world full of flavors and a better home delivery experience, all the while keeping your health and wellness in mind.If you want to enjoy fresh American food to both suit your tummy and pocket, this is the place to be at. We serve you an experience and not just good food. "Keep burping" with delicious and fresh fast food…        
+      </p></div>
+      <div class="col-sm-5 contact">
+        <h6><b>Address</b></h6>
+        <p>
+          <b>Foodies,</b> <br/>
+          Glen Park Avenue,<br/>
+          North York, Toronto,<br/>
+          Ontario - M5S 5H5,<br/>
+          Contact - +1 4562357889
+        </p>
+        <p><b>Opening Time </b>- {{storeDetails.openDateTime | date:'short'}}</p>
+        <p><b>Closing Time </b>- {{storeDetails.closeDateTime | date:'short'}}</p>
+        <button type="button" data-toggle="collapse" data-target="#workingHours" aria-expanded="false" aria-controls="workingHours">Working Hours<span class="fa fa-arrow-down"></span></button>
+        <div class="collapse" id="workingHours"> 
+          <div class="card card-body" *ngFor="let day of storeDetails.hours">
+            {{day.name}} - {{day.hours}}
+          </div>
+        </div>        
+    </div>    
+  </div>  
+</div>

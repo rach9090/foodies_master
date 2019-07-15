@@ -1,0 +1,91 @@
+$font-stack: Helvetica, sans-serif;
+$font-stack-empty: cursive;
+$font-size-page-heading: 24px;
+$font-size-item-heading: 16px;
+$font-size-body: 14px;
+$break-xs-max: 768px;
+
+.container {
+    font-family: $font-stack;
+    .cart-image {
+        padding-left: 10px;
+    }
+    img {
+        width:100%;
+    }
+    h2 {
+        margin-top: 40px;
+        font-size: $font-size-page-heading;
+        font-weight: bold;
+    }
+    h5,h6 {
+        font-size: $font-size-item-heading;
+        font-weight: bold;
+    }
+    h6, span, input {
+        font-size: $font-size-body;
+    }   
+    .quantity, .cart-product {
+        button {
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+        }        
+    }
+    input {
+        width: 30%;
+        text-align: center;
+        border-style: groove;
+        border-radius: 5px;
+        @media screen and (max-width:$break-xs-max){
+            width: 33%;
+        }
+    }
+    .cart-product {
+        padding: 16px;
+        list-style: none;
+        h4, .totalAmt {
+            font-size: $font-size-page-heading;
+            font-weight: bold;
+        } 
+        @media screen and (max-width:$break-xs-max){
+            .closeBtn {
+                padding: 0;
+            }
+        }              
+    }
+    .summary {
+        padding-left: 20%;
+        h4,h5 {
+            display: inline-block;
+        }
+        span {
+            float: right;
+            font-size: $font-size-item-heading;
+            font-weight: bold;
+        }
+        button {
+            margin-left: 21px;
+            width: 100%;
+            font-weight: bold;
+            @media screen and (max-width:$break-xs-max){
+                margin: 0px 0 20px -5px;
+            }
+        }
+        @media screen and (max-width:$break-xs-max){
+            padding-left: 8%;
+            ul {
+                padding-left: 2%;
+            }
+        } 
+    }
+}
+.empty-cart {
+    h2 {
+        font-family: $font-stack-empty;
+        text-align: center;
+    }
+}

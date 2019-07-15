@@ -1,0 +1,21 @@
+<div class="container">
+<div *ngFor="let category of categoryList">
+    <h5 class="category">{{category.desc}}</h5>
+    <div *ngFor="let item of category.items" class="menu-item col-sm-4">
+        <div class="card">
+            <div class="card-body row">
+                <div class="col-6 col-sm-6 no-padding item-details">
+                    <h6 class="card-title">{{item.desc}}</h6>
+                    <p class="card-text">{{item.PromptForDesc | slice:0:30}}</p>
+                    <h6 class="card-title">{{item.Price}}</h6>
+                </div>                
+                <div class="col-6 col-sm-6 no-padding">
+                    <img src="{{item.img}}"/>
+                </div>
+            </div>
+            <button type="button" class="btn" data-toggle="modal" data-target="#myModal" (click)="showModal(item)">Add</button>
+            <app-addon #addOn></app-addon>
+        </div>
+    </div>
+</div>
+</div>

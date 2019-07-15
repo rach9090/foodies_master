@@ -1,0 +1,27 @@
+<div class="modal fade" id="myModal" *ngIf="currentItem">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add {{currentItem.modifiers[0].groupName}}</h4>
+        <button type="button" class="close" (click)="hideModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div *ngFor="let modifier of currentItem.modifiers" class="modifier row">  
+          <input type="checkbox" [(ngModel)]="modifier.quantity" class="col-1 col-sm-1"/>  
+          <div class="col-5 col-sm-5">{{modifier.Desc}}</div> 
+          <div class="col-6 col-sm-6">
+              {{modifier.Price | currency}}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div>
+          <label>Quantity</label>
+          <button (click)="decrement(currentItem)" class="fa fa-minus-square" [disabled]="currentItem.quantity === 1"></button><input type="text" id="totalQuantity" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="currentItem.quantity"><button (click)="increment(currentItem)" class="fa fa-plus-square"></button>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addtoCartModal()">Add to cart</button>
+        <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

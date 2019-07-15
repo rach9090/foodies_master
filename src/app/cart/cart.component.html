@@ -1,0 +1,47 @@
+<div class="container" *ngIf="cart.count;else emptyCart">
+<div class="row">
+  <div class="col-sm-6">
+  <h2>Cart ({{cart.count}} Items)</h2>
+  <div *ngFor="let cartItem of cart.items">
+    <div class="row cart-product">
+        <div class="col-2 col-sm-2 cart-image">
+            <img src="{{cartItem.img}}"/>
+        </div>
+        <div class="col-5 col-sm-5">
+            <h5>{{cartItem.Desc}}</h5>
+            <h6 class="fa fa-dollar"><span>{{cartItem.totalPrice | number:'1.2-2'}}</span></h6><br/>
+            <span *ngFor="let modifier of cartItem.modifier; let last = last">
+                <span>{{modifier.Desc}}</span><span *ngIf="!last">, </span>
+            </span>  
+            <div *ngIf="!cartItem.modifier.length"><span>No AddOns</span></div>      
+        </div> 
+        <div class="col-4 col-sm-4 quantity">
+            <button (click)="decrement(cartItem)" [disabled]="cartItem.quantity === 1" class="fa fa-minus-square"></button><input type="text" aria-describedby="inputGroup-sizing-sm" id="quantity" [(ngModel)]="cartItem.quantity" (change)="quantityChange(cartItem)"><button (click)="increment(cartItem)" class="fa fa-plus-square"></button>
+        </div>
+        <div class="col-1 col-sm-1 closeBtn">
+            <button type="button" (click)="deleteCartProduct(cartItem)" class="fa fa-times"></button>
+        </div>   
+    </div>
+  </div>  
+  </div>
+  <div class="col-sm-6 summary">
+  <h2>Order Summary</h2>
+  <ul class="cart-product">
+      <li><h5>Subtotal:</h5><span class="fa fa-dollar">{{cart.totalCartAmount | number : '1.2-2'}}</span></li>
+      <li><h5>Tax:</h5><span class="fa fa-dollar">{{cart.tax | number : '1.2-2'}}</span></li>
+      <li><h5>Delivery Fee:</h5><span class="fa fa-dollar">{{5.49 | number : '1.2-2'}}</span></li>
+      <li><h5>Delivery Fee (Tax):</h5><span class="fa fa-dollar">{{0.71 | number : '1.2-2'}}</span></li>
+      <li><h4>Total:</h4><span class="fa fa-dollar totalAmt">{{cart.grossAmount | number : '1.2-2'}}</span></li>
+  </ul>
+  <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Checkout page under construction">Proceed to Payment</button>
+  </div></div>
+</div>
+<ng-template #emptyCart>
+    <div class="container empty-cart">
+            <h2>Cart is empty. Go back to <a href="/menu" routerLink="/menu">Menu</a>.</h2>
+    </div>
+</ng-template>
+
+<script>
+    $('[data-toggle="tooltip"]').tooltip({ boundary: 'window' });
+</script>

@@ -1,0 +1,57 @@
+$font-stack: Helvetica, sans-serif;
+$font-size-page-heading: 24px;
+$font-size-item-heading: 16px;
+$font-size-body: 14px;
+$break-xs-max: 767px;
+$break-sm-min: 768px;
+$break-sm-max: 1014px;
+
+.banner {
+    overflow: hidden;
+}
+.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: $font-stack;
+    font-size: $font-size-body;
+    h1 {
+        font-weight: bold;
+        font-size: $font-size-page-heading;
+    }
+    .card-body {
+        width: 48%;
+        padding: 5px;
+        @media screen and (max-width: $break-xs-max){
+            width: 55%;
+        }
+        @media screen and (min-width: $break-sm-min) and (max-width: $break-sm-max) {
+            width: 70%;
+        }
+    }
+    .contact{
+        padding-left: 100px;
+        @media screen and (max-width: $break-xs-max){
+            padding-left: 15px;
+        }
+        @media screen and (min-width: $break-sm-min) and (max-width: $break-sm-max) {
+            padding-left: 30px;
+        }
+    }
+    button {
+        width: 42%;
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        padding: 0;
+        text-align: left;
+        color: blue;
+        text-decoration: underline;
+        font-weight: 100;
+        span {
+            padding-left: 10px;
+        }
+        @media screen and (min-width: $break-sm-min) and (max-width: $break-sm-max) {
+            width: 47%
+        }
+    }
+}

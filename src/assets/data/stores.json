@@ -1,0 +1,43 @@
+{
+    "Stores" : [
+        {
+            "name": "Foodies",
+            "desc": "5-Star Restaurant at the Club House.",
+            "enabled": true,
+            "openDateTime": "Mon Jul 15 2019 9:00:00 GMT-0400",
+            "closeDateTime": "Mon Jul 15 2019 17:00:00 GMT-0400",
+            "ID" : "1155",
+            "img" : "../../assets/images/Banner_about.jpg",
+            "hours": [
+                { 
+                    "name":"Monday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Tuesday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Wednesday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Thursday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Friday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Saturday",
+                    "hours": "9am to 5pm"
+                },
+                { 
+                    "name":"Sunday",
+                    "hours": "Closed"
+                }
+            ]
+        }
+    ]
+}

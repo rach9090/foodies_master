@@ -1,0 +1,35 @@
+$break-xs-max: 768px;
+$font-stack: Arial, Helvetica, sans-serif;
+$font-size-button-mobile: 14px;
+$font-size-button-desktop: 20px;
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .btn {
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: red;
+        color: white;
+        font-size: $font-size-button-desktop;
+        font-weight: bold;
+        width: 25%;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        @media screen and (max-width: $break-xs-max) {
+            top: 34%;
+            width: 47%;
+            font-size: $font-size-button-mobile;
+        }
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+}

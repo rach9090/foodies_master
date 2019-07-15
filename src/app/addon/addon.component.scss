@@ -1,0 +1,31 @@
+.modifier {
+    padding: 10px;
+    li {
+        display: inline-block;  
+    }
+    input {
+        width: 25%;
+        text-align: center;
+        margin-top: 7px;
+    }
+}
+.modal-footer {
+    justify-content: center;
+    label {
+        margin-top: 5px;
+        font-weight: bold;
+    }
+    button.fa {
+        background-color: transparent;
+        border: none;
+    }
+    .btn {
+        width: 50%;
+    }
+    input {
+        width: 15%;
+        text-align: center;
+        border-radius: 7px;
+        border-style: groove;
+    }    
+}

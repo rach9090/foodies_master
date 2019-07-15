@@ -1,0 +1,40 @@
+$break-sm-min: 768px;
+$break-sm-max: 1014px;
+$break-md-min: 1015px;
+$break-md-max: 1200px;
+$font-stack: Arial, Helvetica, sans-serif;
+
+.container {
+    margin-bottom: 20px;
+    background-color: aliceblue;
+    .no-padding {
+        padding:0;
+    }
+    .category {
+        padding: 15px;
+    }
+    .menu-item {
+        display: inline-block;          
+        img {
+            width: inherit;
+        }
+    }
+    .card {
+        min-height: 160px;
+        .btn {
+            background-color: teal;
+            color: #fff;
+        }
+        .card-body {
+            .item-details {
+                padding-right: 15px;
+            }
+            @media screen and (min-width: $break-sm-min) and (max-width: $break-sm-max) {
+                min-height: 225px;
+            }
+            @media screen and (min-width: $break-md-min) and (max-width: $break-md-max) {
+                min-height: 205px;
+            }
+        }                       
+    }
+}
